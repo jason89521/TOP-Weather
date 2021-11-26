@@ -1,0 +1,27 @@
+{
+  "name": "top-weather",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:js": "webpack --watch",
+    "watch:sass": "sass --watch sass/main.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jason89521/TOP-Weather.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jason89521/TOP-Weather/issues"
+  },
+  "homepage": "https://github.com/jason89521/TOP-Weather#readme",
+  "devDependencies": {
+    "sass": "^1.43.5",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  }
+}
