@@ -1,0 +1,47 @@
+.form {
+    display: flex;
+    width: $w-form;
+    margin: 5rem auto;
+    border: 2px solid $color-pearl;
+    border-radius: $border-radius-big;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    position: relative;
+
+    * {
+        font-size: inherit;
+        color: $color-pearl;
+    }
+
+    &__label {
+        position: absolute;
+        color: $color-pearl;
+        transform: translateY(-4rem);
+        transition: all 0.3s;
+    }
+
+    &__input {
+        outline: none;
+        border: none;
+        background: none;
+        flex: 1;
+        color: $color-grey-dark;
+
+        &::placeholder {
+            color: $color-pearl;
+        }
+    }
+
+    &__input:placeholder-shown ~ &__label {
+        opacity: 0;
+        transform: translateY(0);
+        visibility: hidden;
+    }
+
+    &__btn {
+        cursor: pointer;
+        background: none;
+        outline: none;
+        border: none;
+    }
+}

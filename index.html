@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <form id="form" class="form">
+        <input id="city" type="text" class="form__input" placeholder="City name">
+        <label for="city" class="form__label">City name</label>
+        <button class="form__btn"><i class="fas fa-search"></i></button>
+    </form>
+
+    <main>
+        <section class="section-day">
+            <div id="today" class="card card--today">
+                <h1 class="card__heading">Today</h1>
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon" class="card__icon">
+                <h2 class="card__city">Tainan City</h2>
+                <h2 class="card__temp">20&#8451;</h2>
+                <h2 class="card__description">Light Rain</h2>
+                <a href="#popup" class="card__btn">Details</a>
+            </div>
+
+            <div id="tomorrow" class="card card--tomorrow">
+                <h1 class="card__heading">Today</h1>
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon" class="card__icon">
+                <h2 class="card__city">Tainan City</h2>
+                <h2 class="card__temp">20&#8451;</h2>
+                <h2 class="card__description">Light Rain</h2>
+                <a href="#popup" class="card__btn">Details</a>
+            </div>
+
+            <div id="popup" class="popup">
+                
+            </div>
+        </section>
+    </main>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

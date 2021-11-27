@@ -1,0 +1,7 @@
+.section-day {
+    display: flex;
+    justify-content: center;
+    gap: $gap-cards;
+    perspective: 150rem;
+    position: relative;
+}

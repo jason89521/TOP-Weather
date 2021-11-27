@@ -1,0 +1,68 @@
+.card {
+    background-image: linear-gradient(to bottom, $color-pearl-dark, $color-pearl);
+    border-radius: $border-radius;
+    width: 20rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 1s;
+
+    & > *:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    &__heading {
+        color: white;
+        font-weight: bold;
+        font-size: 2rem;
+        letter-spacing: 5px;
+    }
+
+    &__city, &__temp {
+        color: $color-grey-dark;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    &__description {
+        color: $color-primary-dark;
+    }
+    font-size: 1.2rem;
+
+    &__btn {
+        cursor: pointer;
+        background-color: $color-primary;
+        color: white;
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+        outline: none;
+        border: none;
+        border-radius: $border-radius-big;
+        padding: 0.5rem 3rem;
+        position: relative;
+        transition: all 0.2s;
+        backface-visibility: hidden;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: $border-radius-big;
+            background-color: $color-primary;
+            z-index: -1;
+            transition: all 0.4s;
+        }
+
+        &:hover {
+            transform: translateY(-3px);
+
+            &::after {
+                opacity: 0;
+                transform: scale(1.5);
+            }
+        }
+    }
+}
