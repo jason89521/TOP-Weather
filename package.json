@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/jason89521/TOP-Weather#readme",
   "devDependencies": {
+    "date-fns": "^2.26.0",
     "sass": "^1.43.5",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1"

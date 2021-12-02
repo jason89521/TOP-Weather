@@ -2,13 +2,13 @@
 @import 'abstract/variables';
 
 // base
+@import 'base/animation';
 @import 'base/reset';
 @import 'base/base';
 
 // components
 @import 'components/form';
 @import 'components/card';
-@import 'components/popup';
 
 // pages
 @import 'pages/home';

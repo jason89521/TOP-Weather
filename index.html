@@ -21,27 +21,45 @@
     </form>
 
     <main>
-        <section class="section-day">
+        <section id="section-day" class="section-day">
             <div id="today" class="card card--today">
-                <h1 class="card__heading">Today</h1>
-                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon" class="card__icon">
-                <h2 class="card__city">Tainan City</h2>
-                <h2 class="card__temp">20&#8451;</h2>
-                <h2 class="card__description">Light Rain</h2>
-                <a href="#popup" class="card__btn">Details</a>
+                <div class="card__left">
+                    <h1 class="card__heading">Today</h1>
+                    <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon" class="card__icon">
+                    <h2 class="card__city">Tainan City</h2>
+                    <h2 class="card__temp">20&#8451;</h2>
+                    <h2 class="card__description">Light Rain</h2>
+                    <a href="#popup" class="card__btn">Details</a>
+                </div>
+
+                <div class="card__right">
+                    <ul class="card__list">
+                        <li>Feels Like: </li>
+                        <li>Humidity: </li>
+                        <li>Sunrise: </li>
+                        <li>Sunset: </li>
+                    </ul>
+                </div>
             </div>
 
             <div id="tomorrow" class="card card--tomorrow">
-                <h1 class="card__heading">Today</h1>
-                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon" class="card__icon">
-                <h2 class="card__city">Tainan City</h2>
-                <h2 class="card__temp">20&#8451;</h2>
-                <h2 class="card__description">Light Rain</h2>
-                <a href="#popup" class="card__btn">Details</a>
-            </div>
+                <div class="card__left">
+                    <h1 class="card__heading">Tomorrow</h1>
+                    <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon" class="card__icon">
+                    <h2 class="card__city">Tainan City</h2>
+                    <h2 class="card__temp">20&#8451;</h2>
+                    <h2 class="card__description">Light Rain</h2>
+                    <a href="#popup" class="card__btn">Details</a>
+                </div>
 
-            <div id="popup" class="popup">
-                
+                <div class="card__right">
+                    <ul class="card__list">
+                        <li>Feels Like: </li>
+                        <li>Humidity: </li>
+                        <li>Sunrise: </li>
+                        <li>Sunset: </li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>

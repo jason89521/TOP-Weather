@@ -1,14 +1,31 @@
 .card {
     background-image: linear-gradient(to bottom, $color-pearl-dark, $color-pearl);
     border-radius: $border-radius;
-    width: 20rem;
-    padding: 2rem 1rem;
+    width: 22.5rem;
+    padding: 2rem 4rem;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    transition: all 1s;
+    transition: all .5s;
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
 
-    & > *:not(:last-child) {
-        margin-bottom: 2rem;
+    &--big {
+        width: $w-form;
+    }
+
+    &--big > &__right {
+        width: 20rem;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__left {
+        width: 20rem;
+
+        & > *:not(:last-child) {
+            margin-bottom: 2rem;
+        }
     }
 
     &__heading {
@@ -18,7 +35,8 @@
         letter-spacing: 5px;
     }
 
-    &__city, &__temp {
+    &__city,
+    &__temp {
         color: $color-grey-dark;
         font-size: 1.5rem;
         letter-spacing: 2px;
@@ -40,7 +58,6 @@
         border-radius: $border-radius-big;
         padding: 0.5rem 3rem;
         position: relative;
-        transition: all 0.2s;
         backface-visibility: hidden;
 
         &::after {
@@ -63,6 +80,39 @@
                 opacity: 0;
                 transform: scale(1.5);
             }
+        }
+
+        &--close {
+            background-color: red;
+
+            &::after {
+                background-color: red;
+            }
+        }
+    }
+
+    &__right {
+        margin-left: auto;
+        width: 0;
+        overflow: hidden;
+        transition: all .5s;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__list {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        & > * {
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+            color: $color-grey-dark;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid $color-grey;
+            
         }
     }
 }

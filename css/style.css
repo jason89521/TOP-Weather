@@ -1,3 +1,13 @@
+@keyframes scaleToFormWidth {
+  to {
+    width: 50rem;
+  }
+}
+@keyframes zeroGap {
+  to {
+    gap: 0;
+  }
+}
 html,
 body,
 div,
@@ -186,14 +196,28 @@ html {
 .card {
   background-image: linear-gradient(to bottom, #d2bd89, #eae0c8);
   border-radius: 5px;
-  width: 20rem;
-  padding: 2rem 1rem;
+  width: 22.5rem;
+  padding: 2rem 4rem;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  transition: all 1s;
+  transition: all 0.5s;
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
   font-size: 1.2rem;
 }
-.card > *:not(:last-child) {
+.card--big {
+  width: 50rem;
+}
+.card--big > .card__right {
+  width: 20rem;
+  opacity: 1;
+  visibility: visible;
+}
+.card__left {
+  width: 20rem;
+}
+.card__left > *:not(:last-child) {
   margin-bottom: 2rem;
 }
 .card__heading {
@@ -221,7 +245,6 @@ html {
   border-radius: 10px;
   padding: 0.5rem 3rem;
   position: relative;
-  transition: all 0.2s;
   backface-visibility: hidden;
 }
 .card__btn::after {
@@ -243,23 +266,32 @@ html {
   opacity: 0;
   transform: scale(1.5);
 }
-
-.popup {
-  position: absolute;
-  width: 50rem;
-  top: -1rem;
-  bottom: -1rem;
-  margin: 0 auto;
-  transition: all 1s cubic-bezier(0.2, 1.55, 0.77, 1.27);
-  background-color: #d2bd89;
-  transform: scale(0);
+.card__btn--close {
+  background-color: red;
+}
+.card__btn--close::after {
+  background-color: red;
+}
+.card__right {
+  margin-left: auto;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.5s;
   opacity: 0;
   visibility: hidden;
 }
-.popup:target {
-  transform: scale(1);
-  opacity: 1;
-  visibility: visible;
+.card__list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.card__list > * {
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  color: #676767;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #a0a0a0;
 }
 
 .section-day {
@@ -268,6 +300,18 @@ html {
   gap: 5rem;
   perspective: 150rem;
   position: relative;
+  transition: all 0.5s;
+  animation: 0.5s zeroGap ease;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: paused;
+}
+.section-day--animation > *:not(.card--animation) {
+  width: 0;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */
