@@ -2,6 +2,7 @@ import { fromUnixTime } from 'date-fns';
 import { getWeatherData } from './api';
 import { toggleBtn, updateCard } from './utils';
 
+const loading = document.getElementById('loading');
 const form = document.getElementById('form');
 const sectionDay = document.getElementById('section-day');
 const todayCard = document.getElementById('today');
@@ -13,29 +14,35 @@ let bigFlag = false;
 let targetCard = todayCard;
 
 async function init() {
+    loading.style.display = 'block';
     let weatherData;
     try {
         weatherData = await getWeatherData('tainan');
     } catch (error) {
+        loading.style.display = 'none';
         console.error(error);
         return;
     }
 
+    loading.style.display = 'none';
     updateCard(todayCard, weatherData.today);
     updateCard(tomorrowCard, weatherData.tomorrow);
 }
 
 form.addEventListener('submit', async event => {
     event.preventDefault();
+    loading.style.display = 'block';
     const city = form.elements['city'].value;
     let weatherData;
     try {
         weatherData = await getWeatherData(city);
     } catch (error) {
+        loading.style.display = 'none';
         console.error(error);
         return;
     }
 
+    loading.style.display = 'none';
     updateCard(todayCard, weatherData.today);
     updateCard(tomorrowCard, weatherData.tomorrow);
 });

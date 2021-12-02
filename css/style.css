@@ -1,11 +1,14 @@
-@keyframes scaleToFormWidth {
-  to {
-    width: 50rem;
-  }
-}
 @keyframes zeroGap {
   to {
     gap: 0;
+  }
+}
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 html,
@@ -292,6 +295,26 @@ html {
   color: #676767;
   padding-bottom: 1rem;
   border-bottom: 2px solid #a0a0a0;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  display: none;
+}
+.loading__icon {
+  display: block;
+  font-size: 5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 1.5s linear;
+  animation-iteration-count: infinite;
 }
 
 .section-day {
